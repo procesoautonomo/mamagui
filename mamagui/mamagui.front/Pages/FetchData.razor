@@ -1,9 +1,11 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
 
-<h1>Weather forecast</h1>
+<h1>
+    Pronóstico del tiempo
+</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>Este componente demuestra cómo obtener datos del servidor.</p>
 
 @if (forecasts == null)
 {
@@ -14,10 +16,10 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Fecha</th>
+                <th>Temperatura. (C)</th>
+                <th>Temperatura(F)</th>
+                <th>Resumen</th>
             </tr>
         </thead>
         <tbody>
