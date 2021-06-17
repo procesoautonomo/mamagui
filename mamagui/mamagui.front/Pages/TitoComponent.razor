@@ -1,12 +1,40 @@
 ﻿@page "/TitoComp"
 
-<h1>Componente de Tito Bianco</h1>
+<h1>Componente para saludar al usuario</h1>
+<br />
 
-<h3> Hola Mamagui!!</h3>
+<label for="InputNombreCreador">Ingresa tu nombre</label>
+<input type="text" name="InputNombreCreador" @bind="NombreDelCreador" />
+
+<br />
+<br /> 
+
+@if (NombreDelCreador != "")
+            {
+                <h3>Hola mi querido/: @NombreDelCreador</h3>
+
+           }
+
+else 
+{ 
+  <p>Ingresa algun nombre para que te pueda saludar.</p>
+}
+
+
+
+
+
+
+
+
 
 
 
 
 @code {
+
+    string NombreDelCreador = "Tito bianco";
+
+    string SaludoDelComponente = "Saludos Mamagui";
 
 }
