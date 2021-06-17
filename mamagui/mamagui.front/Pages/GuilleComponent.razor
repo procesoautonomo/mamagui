@@ -1,10 +1,38 @@
 ﻿@page "/GuilleComp"
 
 
-<h1>Componente de Guillermo</h1>
 
-<h3>Saludos Martin y Matías!!</h3>
+
+
+<h1>Componente de @NombreCreador</h1>
+
+<h3>@SaludoComponente</h3>
+<label>
+Ingresar nombre:
+</label>
+
+<input type="text" name="name" @bind="NombreCreador" />
+
+
+
+
+@if (NombreCreador != "")
+{
+    <h3> Hola amigo/a: @NombreCreador</h3>
+}
+
+else
+{
+    <p>Ingresa algún nombre</p>
+}
+
+
 
 @code {
 
+    string NombreCreador = "Guille Oscar";
+
+    string SaludoComponente = "Saludos!";
+
 }
+
