@@ -1,10 +1,29 @@
 ﻿@page "/MatiComp"
 
-<h1>Componente de Matías Argüello</h1>
+<h1>Componente Para Saludar al Usuario.</h1>
+<br />
 
-<h3>¡Un saludo a todos los autónomos!</h3>
+<label for="InputNombreCreador">Ingresa tu nombre:</label>
+<input type="text" name="InputNombreCreador" @bind="NombreDelCreador" />
+
+<br />
+<br />
+
+
+@if (NombreDelCreador != "")
+{
+    <h3>Hola mi querido/a: @NombreDelCreador</h3>
+}
+else
+{
+    <p>Ingresa algún nombre para que te pueda saludar.</p>
+}
+
+
 
 
 @code {
     
+    string NombreDelCreador = "";
+
 }
