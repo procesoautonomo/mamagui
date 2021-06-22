@@ -1,17 +1,5 @@
 ﻿@page "/TitoComp"
 
-
-@code {
-
-    string NombreDelUsuario = "Martin";
-
-    string ApellidoDelUsuario = "Bianco";
-
-    int EdadDeUsuario = 18;
-
-}
-
-
 <h1>Proceso de registro.</h1>
 <br />
 <br />
@@ -29,25 +17,25 @@
 <label for="InputEdadUsuario">Ingresa tu edad</label>
 <input type="number" name="InputEdadUsuario" @bind="EdadDeUsuario" />
 
-
 <br />
 <br />
-
-
 
 @if (EdadDeUsuario >= 18)
 {
-
     <h3>Usted puede ingresar al sitio:  @NombreDelUsuario  @ApellidoDelUsuario</h3>
-
 }
-
-
 else
-
 {
-    <h3>Acceso Denegado!</h3> 
+    <h3>Acceso Denegado!</h3>
 }
 
 
+@code {
 
+    string NombreDelUsuario = "Martin";
+
+    string ApellidoDelUsuario = "Bianco";
+
+    int EdadDeUsuario = 18;
+
+}
