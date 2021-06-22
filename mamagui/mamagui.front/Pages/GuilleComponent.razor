@@ -7,8 +7,9 @@
 <h1>Componente de @NombreCreador</h1>
 
 <h3>@SaludoComponente</h3>
+
 <label>
-Ingresar nombre:
+    Ingresar nombre:
 </label>
 
 <input type="text" name="name" @bind="NombreCreador" />
@@ -27,6 +28,35 @@ else
 }
 
 
+<label>
+    Ingresar edad:
+</label>
+<br />
+
+<input type="number" name="age" @bind="EdadCreador" />
+
+<br />
+<br />
+
+
+@if (EdadCreador == 0 )
+
+{
+    <h3>Debes ingresar tu edad. </h3>
+}
+
+else if (EdadCreador >= 18)
+
+{
+    <h3> Puedes ingresar. </h3>   
+}
+
+else
+
+{
+    <h1> Rajá de acá chinwenwencha!!! </h1>
+}
+
 
 @code {
 
@@ -34,5 +64,6 @@ else
 
     string SaludoComponente = "Saludos!";
 
-}
+    int EdadCreador = 29; 
+    }
 
