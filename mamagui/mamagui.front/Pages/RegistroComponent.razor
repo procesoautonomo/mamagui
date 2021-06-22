@@ -1,0 +1,48 @@
+﻿@page "/RegistroUsuario"
+
+
+@code {
+
+    string NombreDelUsuario = "Martin";
+
+    string ApellidoDelUsuario = "Bianco";
+
+    int EdadDeUsuario = 18; 
+
+}
+
+
+    Proceso de registro./h1> 
+    <br />
+
+    <label for="InputNombreUsuario">Ingresa tu nombre</label>
+    <input type="text" name="InputNombreUsuario" @bind="NombreDelUsuario" />
+    <br />
+
+    <label for="InputApellidoUsuario">Ingresa tu apellido</label>
+    <input type="text" name="InputApellidoUsuario" @bind="ApellidoDelUsuario" /> 
+    <br />
+
+   <label for="InputEdadUsuario">Ingresa tu edad</label>
+    <input type="number" name="InputEdadUsuario" @bind="EdadDeUsuario" /> 
+
+
+    <br />
+    <br />
+
+
+
+    @if (EdadDeUsuario >= 18)
+     {
+
+         <h3>Usted puede ingresar al sitio/: @NombreDelUsuario + @ApellidoDelUsuario</h3>
+        
+     }
+        
+    
+    else
+        
+        {
+         <p>Acceso denegado.</p> 
+        }
+

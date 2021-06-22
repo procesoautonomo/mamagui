@@ -1,40 +1,53 @@
 ﻿@page "/TitoComp"
 
-<h1>Componente para saludar al usuario</h1>
-<br />
-
-<label for="InputNombreCreador">Ingresa tu nombre</label>
-<input type="text" name="InputNombreCreador" @bind="NombreDelCreador" />
-
-<br />
-<br /> 
-
-@if (NombreDelCreador != "")
-            {
-                <h3>Hola mi querido/: @NombreDelCreador</h3>
-
-           }
-
-else 
-{ 
-  <p>Ingresa algun nombre para que te pueda saludar.</p>
-}
-
-
-
-
-
-
-
-
-
-
-
 
 @code {
 
-    string NombreDelCreador = "Tito bianco";
+    string NombreDelUsuario = "Martin";
 
-    string SaludoDelComponente = "Saludos Mamagui";
+    string ApellidoDelUsuario = "Bianco";
+
+    int EdadDeUsuario = 18;
 
 }
+
+
+<h1>Proceso de registro.</h1>
+<br />
+<br />
+
+<label for="InputNombreUsuario">Ingresa tu nombre</label>
+<input type="text" name="InputNombreUsuario" @bind="NombreDelUsuario" />
+<br />
+<br />
+
+<label for="InputApellidoUsuario">Ingresa tu apellido</label>
+<input type="text" name="InputApellidoUsuario" @bind="ApellidoDelUsuario" />
+<br />
+<br />
+
+<label for="InputEdadUsuario">Ingresa tu edad</label>
+<input type="number" name="InputEdadUsuario" @bind="EdadDeUsuario" />
+
+
+<br />
+<br />
+
+
+
+@if (EdadDeUsuario >= 18)
+{
+
+    <h3>Usted puede ingresar al sitio:  @NombreDelUsuario  @ApellidoDelUsuario</h3>
+
+}
+
+
+else
+
+{
+    <h3>Acceso Denegado!</h3> 
+}
+
+
+
