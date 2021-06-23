@@ -1,52 +1,39 @@
 ﻿@page "/Bucles"
 
 <h1>Bucles</h1>
-<h3>Desde codigo solo desde el codigo</h3>
+<h3>Resolver problemas con bucles</h3>
 
 
-@for (int i = 0; i < 15; i++)
-{
-    <div>
-        Fila nro. @i - @(i % 2 == 0 ? "Es Par" : "Es Impar")
-    </div>
-}
+@* 
+    Escribir el codigo para que el usuario ingrese un valor 
+    y al hacer click en un botón se muestre 
+    la suma de todos los numeros desde 1 hasta el numero ingresado
+*@
 
-<br />
+<label>Ingrese un número para mostrar la suma de todos los numero hasta el que ingresó</label>
 
-@for (int i = 0; i < 15; i++)
-{
-    <div>
-        Fila nro. @i - @if (i % 2 == 0)
-        {
-            <p>Es par</p>
-        }
-        else
-        {
-            <p>Es Impar</p>
-        }
-    </div>
+<input type="number" name="numero" @bind="numeroDelUsuario" />
 
-}
+<button @onclick="SumarNumerosEnBucle">Iniciar</button>
 
 <br />
 
-@for (int c = 15; c > 0; c--)
-{
-    if (c == 15)
-    {
-        <p>Iniciando Contador</p>
-    }
-
-    <p>Fila nro. @c</p>
-
-    if (c == 1)
-    {
-        <p>FIN.</p>
-    }
-
-}
+<label name="resultado">Resultado: @resultado</label>
 
 
 @code {
+    int numeroDelUsuario;
+    int resultado;
+
+
+    void SumarNumerosEnBucle()
+    {
+        resultado = 0;
+
+        for (int i = 0; i <= numeroDelUsuario; i++)
+        {
+            resultado = resultado + i;
+        }
+    }
 
 }
