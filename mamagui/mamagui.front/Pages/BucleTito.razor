@@ -1,0 +1,52 @@
+﻿@page "/BuclesTito"
+
+<h3>BucleTito</h3>
+<h3>Desde codigo solo desde el codigo</h3>
+
+
+@for (int i = 0; i < 15; i++)
+{
+
+    <div>
+        Fila nro. @i - @if (i % 2 == 0)
+
+        {
+            <p>Es Par</p>
+        }
+        else
+        {
+            <p>Es Impar</p>
+        }
+    </div>
+
+}
+
+<br />
+
+@for (int c = 15; c > 0; c--)
+{
+    if (c == 15) 
+    { 
+        <p>Iniciando Contador</p>    
+    }
+
+    <p>Fila nro.</p>
+
+    if (c == 3);
+
+        <p>FIN.</p>
+
+}
+
+@code {
+
+}
+
+
+
+
+
+
+
+
+
