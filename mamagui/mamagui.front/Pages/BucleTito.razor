@@ -1,10 +1,10 @@
 ﻿@page "/BuclesTito"
 
-<h3>BucleTito</h3>
+@*<h3>BucleTito</h3>
 <h3>Desde codigo solo desde el codigo</h3>
 
 
-@for (int i = 0; i < 15; i++)
+@for (int i = 0; i < 15; i++) 
 {
 
     <div>
@@ -23,23 +23,54 @@
 
 <br />
 
-@for (int c = 15; c > 0; c--)
+@for (int c = 15; c >= 0; c--) 
 {
     if (c == 15) 
     { 
         <p>Iniciando Contador</p>    
     }
 
-    <p>Fila nro.</p>
+    <p>Fila nro. @c</p>
 
-    if (c == 3);
+    if (c == 0)
+     {
+        <p>FIN.</p> 
+     }
 
-        <p>FIN.</p>
+        
+}*@
 
-}
+
+
+
+@*Escribir el codigo para que el usuario ingrese un valor y al hacer click en un boton se muestre la suma de todos los numeros desde 1 hasta el numero ingresado.*@
+
+<label>Ingrese un numero para mostrar la suma de todos los numeros has el que ingreso.</label>
+
+<input type="number" name="numero"  @bind="numeroDelUsuario"/> 
+
+<button>Iniciar</button>
+
+<br />
+
+<label name="resultado">Resultado</label>
+
 
 @code {
+    int numeroDelUsuario;
+    int resultado;
 
+    void SumarNumerosEnBucle()
+    {
+        resultado = 0;
+
+        for (int i = 0; i <= numeroDelUsuario; i++)
+        {
+            resultado = resultado + i; 
+                 
+        }
+
+    }
 }
 
 
