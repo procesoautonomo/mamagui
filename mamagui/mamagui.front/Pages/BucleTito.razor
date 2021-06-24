@@ -1,73 +1,43 @@
 ﻿@page "/BuclesTito"
 
-@*<h3>BucleTito</h3>
-<h3>Desde codigo solo desde el codigo</h3>
 
+<label>Ingrese un numero para mostrar su factorial.</label>
 
-@for (int i = 0; i < 15; i++) 
+<input type="number" name="numero" @bind="numeroDelUsuario" />
+
+<button @onclick="CalcularFactorial">Iniciar</button>
+
+<br />
+
+@if (numeroDelUsuario < 0)
 {
-
-    <div>
-        Fila nro. @i - @if (i % 2 == 0)
-
-        {
-            <p>Es Par</p>
-        }
-        else
-        {
-            <p>Es Impar</p>
-        }
-    </div>
-
+    <label>El número debe ser positivo.</label>
 }
-
-<br />
-
-@for (int c = 15; c >= 0; c--) 
+else
 {
-    if (c == 15) 
-    { 
-        <p>Iniciando Contador</p>    
-    }
-
-    <p>Fila nro. @c</p>
-
-    if (c == 0)
-     {
-        <p>FIN.</p> 
-     }
-
-        
-}*@
-
-
-
-
-@*Escribir el codigo para que el usuario ingrese un valor y al hacer click en un boton se muestre la suma de todos los numeros desde 1 hasta el numero ingresado.*@
-
-<label>Ingrese un numero para mostrar la suma de todos los numeros has el que ingreso.</label>
-
-<input type="number" name="numero"  @bind="numeroDelUsuario"/> 
-
-<button>Iniciar</button>
-
-<br />
-
-<label name="resultado">Resultado</label>
+    <label name="resultado">Resultado @resultado</label>
+}
 
 
 @code {
     int numeroDelUsuario;
     int resultado;
 
-    void SumarNumerosEnBucle()
+    void CalcularFactorial()
     {
-        resultado = 0;
 
-        for (int i = 0; i <= numeroDelUsuario; i++)
+        if (numeroDelUsuario > 0)
         {
-            resultado = resultado + i; 
-                 
+            resultado = 1;
+        }
+        else
+        {
+            resultado = 0;
+        }
+
+        for (int i = 1; i <= numeroDelUsuario; i++)
+        {
+            resultado = resultado * i;
         }
 
     }
