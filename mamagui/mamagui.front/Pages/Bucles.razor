@@ -1,0 +1,52 @@
+﻿@page "/Bucles"
+
+<h1>Bucles</h1>
+<h3>Desde codigo solo desde el codigo</h3>
+
+
+@for (int i = 0; i < 15; i++)
+{
+    <div>
+        Fila nro. @i - @(i % 2 == 0 ? "Es Par" : "Es Impar")
+    </div>
+}
+
+<br />
+
+@for (int i = 0; i < 15; i++)
+{
+    <div>
+        Fila nro. @i - @if (i % 2 == 0)
+        {
+            <p>Es par</p>
+        }
+        else
+        {
+            <p>Es Impar</p>
+        }
+    </div>
+
+}
+
+<br />
+
+@for (int c = 15; c > 0; c--)
+{
+    if (c == 15)
+    {
+        <p>Iniciando Contador</p>
+    }
+
+    <p>Fila nro. @c</p>
+
+    if (c == 1)
+    {
+        <p>FIN.</p>
+    }
+
+}
+
+
+@code {
+
+}
