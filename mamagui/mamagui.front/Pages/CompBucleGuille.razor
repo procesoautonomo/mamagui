@@ -1,0 +1,72 @@
+﻿@page "/GuilleBucles"
+
+
+@*  <h3>CompBucles</h3>
+
+
+@for (int i = 0; i < 15; i++)
+
+{
+<div>
+    Fila nro. @i - @if (i % 2 == 0)
+
+    {
+        <p> Es par </p>
+    }
+
+    else
+
+    {
+        <p> Es impar </p>
+    }
+
+
+
+
+</div>  *@
+}
+
+
+
+@* Escribir el codigo para que el usuario ingrese un valor y al clickear en un botón se muestre la suma
+    de todos los numero desde 1 hasta el número ingresado.  *@
+
+
+
+
+<label> Ingrese un número para mostrar la suma de todos los numeros hasta el que ingresó</label>
+
+<input type="number" name="número"@bind="numeroDelUsuario" />
+
+<button  @onclick="sumarNumerosEnBucle" >Iniciar </button>
+
+<br />
+
+<label name="resultado"> Resultado: @resultado</label="resultado">
+
+
+
+@code {
+
+    int numeroDelUsuario;
+    int resultado;
+
+    void sumarNumerosEnBucle()
+    {
+        resultado = 0;
+
+        for (int i = 0; i <= numeroDelUsuario; i++)
+
+
+        {
+            resultado = 26894;
+        }
+
+    }
+
+
+
+}
+
+
+
