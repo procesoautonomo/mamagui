@@ -1,0 +1,101 @@
+﻿@page "/SumaParesImparesMatis"
+
+<h1>Ejercicio 29/06</h1>
+<br />
+<label>Ingrese 2 números positivos para mostrar los resultados.</label>
+<label>Se mostrarán la suma de los números pares desde el 1 al primer número ingresado y la suma de los número impares desde el 1 hasta el segundo número ingresado</label>
+<br />
+<br />
+<label>Ingrese el 1er número:</label>
+<input type="number" name="PrimerNumero" @bind="Num1" />
+@if (MostrarErrorNum1 == true)
+{
+    <label>El número debe ser positivo</label>
+}
+
+
+<br />
+<label>Ingrese el 2do número:</label>
+<input type="number" name="SegundoNumero" @bind="Num2" />
+@if (MostrarErrorNum2 == true)
+{
+    <label>El número debe ser positivo</label>
+}
+
+
+<br />
+<button @onclick="CalcularMostrar">Mostrar Resultados</button>
+
+@if (MostrarResultado == true)
+{
+    <br />
+    <br />
+    <label>La suma de los pares es: @Resultado1</label>
+    <br />
+    <label>La suma de los impares es: @Resultado2</label>
+}
+
+
+
+@code {
+    int Num1;
+    int Num2;
+    int Resultado1;
+    int Resultado2;
+    bool MostrarResultado = false;
+    bool MostrarErrorNum1 = false;
+    bool MostrarErrorNum2 = false;
+
+    void CalcularMostrar()
+    {
+        //validamos el ingreso positivo de numero 1
+        if (Num1 < 0 == true)
+        {
+            MostrarErrorNum1 = true;
+        }
+        else
+        {
+            MostrarErrorNum1 = false;
+        }
+
+        //validamos el ingreso positivo de numero 2
+        MostrarErrorNum2 = Num2 < 0;
+
+
+        //mostramos resultados si los 2 numeros son positivos
+        if (MostrarErrorNum1 == false && MostrarErrorNum2 == false)
+        {
+
+            //aca resolvemos el problema matematico
+            //suma de pares del 1 hasta el primer numero ingresado
+            Resultado1 = 0;
+            for (int i = 0; i <= Num1; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Resultado1 = Resultado1 + i;
+                }
+            }
+
+            //aca resolvemos el problema matematico
+            //suma de impare del 1 hasta el segundo numero ingresado
+            Resultado2 = 0;
+            for (int i = 0; i <= Num2; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    Resultado2 = Resultado2 + i;
+                }
+            }
+
+            MostrarResultado = true;
+        }
+        else
+        {
+            MostrarResultado = false;
+        }
+
+
+    }
+
+}
