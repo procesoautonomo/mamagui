@@ -1,0 +1,42 @@
+﻿@page "/PracticaGuille"
+
+
+<h1>TareaPracticaGuille</h1>
+
+
+
+
+
+<label> Ingrese un número en cada casillero y luego presione enter: </label>
+
+<input type="number" name="número" @bind="numero1Usuario" />
+
+<button @onclick="sumaNumerosPares">Iniciar </button>
+
+<br />
+
+<label name="resultado"> Resultado: @resultado1</label>
+
+
+
+@code {
+    
+    int numero1Usuario;
+    int resultado1;
+
+    void sumaNumerosPares()
+    {
+        for (int i = 0; i <= numero1Usuario; i++)
+
+            if (i % 2 == 0)
+            {
+                numero1Usuario += i;
+            }
+
+
+
+
+    }
+
+
+}
