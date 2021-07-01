@@ -1,0 +1,53 @@
+﻿@page "/FactorialTito"
+
+<label>Calculo de Factorial Mamagui.</label>
+
+<h1>Ingresa un Numero!</h1>
+
+<input type="number" name="numeroFactorial" @bind="Numerofactorial" />
+
+<button @onclick="CalcularFactorial">Iniciar</button>
+
+<br />
+
+@if (Numerofactorial < 0)
+{
+    <label>El número debe ser positivo.</label>
+}
+else
+{
+    <label name="resultado">Resultado @resultado</label>
+}
+
+
+
+
+
+
+
+@code {
+
+    int Numerofactorial;
+
+    int resultado;
+
+    void CalcularFactorial()
+    {
+
+        if (Numerofactorial > 0)
+        {
+            resultado = 1;
+        }
+        else
+        {
+            resultado = 0;
+        }
+
+        for (int i = 1; i <= Numerofactorial; i++)
+        {
+            resultado = resultado * i;
+        }
+
+    }
+
+}
