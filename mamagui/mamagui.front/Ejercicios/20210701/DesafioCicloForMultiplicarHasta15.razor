@@ -4,27 +4,44 @@
 <p>Desarrollar un programa que muestre la tabla de multiplicar del número ingresado del 1 hasta el 15.</p>
 
 <label>Ingreser un número:</label>
-<input type="number" name="Num" @bind="numero" />
-<button @onclick="Mostrar">Mostrar/Ocultar</button>
+<input type="number" class="form-control" @bind="numero" />
+<br />
+<button @onclick="Mostrar" class="btn btn-success">Mostrar/Ocultar</button>
 
 @if (mostrar == true)
 {
+<hr />
+<div class="list-group">
     @for (int i = 1; i <= 15; i++)
     {
-        <div>@i X @numero = @(numero*i)</div>
+        if (i % 2 == 0)
+        {
+            <a class="list-group-item list-group-item-action list-group-item-primary">
+                <div>@i X @numero = @(numero*i)</div>
+            </a>
+        }
+        else
+        { 
+            <a class="list-group-item list-group-item-action list-group-item-success">
+                <div>@i X @numero = @(numero*i)</div>
+            </a>
+        }
     }
+</div>
 }
 
+    
 
 
-@code {
-    int numero;
-    bool mostrar = false;
+
+    @code {
+        int numero;
+        bool mostrar = false;
 
 
-    void Mostrar()
-    {
-        mostrar = !mostrar;
+        void Mostrar()
+        {
+            mostrar = !mostrar;
+        }
+
     }
-
-}
