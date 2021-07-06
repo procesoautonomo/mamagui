@@ -2,11 +2,11 @@
 
 <div><label> Ingrese un número en cada casillero y luego presione enter: </label></div>
 
-<input type="number" name="número" @bind="numero1Usuario" />
+<input type="number" class="form-control" name="número" @bind="numero1Usuario" />
 
 <div> <br /> </div>
 
-<input type="number" name="número" @bind="numero2Usuario" />
+<input type="number" class="form-control" name="número" @bind="numero2Usuario" />
 
 <br />
 
@@ -18,7 +18,7 @@
 
 @if (numero1Usuario < 0)
 {
-    <label>El número debe ser positivo.</label>
+    <label>El número debe ser positivo.</label>  
 }
 
 <br />
@@ -30,7 +30,7 @@
 
 
 <br />
-<button @onclick="CalcularMostrar">Calcular</button>   
+<button @onclick="CalcularMostrar" class="btn-danger">Calcular</button>   
 
 
 @if (MostrarResultado == true)
