@@ -1,0 +1,80 @@
+﻿@page "/SumaParesImpares"
+
+<label> Ingrese un número en cada casillero y luego presione enter: </label>
+
+<input type="number" name="número" @bind="numero1Usuario" />
+
+<br />
+
+<input type="number" name="número" @bind="numero2Usuario" />
+
+<br />
+
+
+
+<label> La suma de numeros impares es: </label>
+
+<input type="number" name="númeroImpar" @bind="SumaNumero1" />
+
+<br />
+
+
+
+@if (numero1Usuario < 0)
+{
+    <label>El número debe ser positivo.</label>
+}
+
+<br />
+
+@if (numero2Usuario < 0)
+{
+    <label>El número debe ser positivo.</label>
+}
+
+
+@while (ContadorNumero1 <= numero1Usuario) ;
+
+
+@if (ContadorNumero1 % 2 != 0)
+{
+    SumaNumero1 += ContadorNumero1;
+
+    ContadorNumero1 += 1;
+}
+
+
+
+
+
+
+
+
+@code{
+    int numero1Usuario;
+
+    int numero2Usuario;
+
+    int ContadorNumero1 = 1;
+
+    int SumaNumero1 = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
