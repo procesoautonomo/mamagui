@@ -1,6 +1,7 @@
 ﻿@page "/SumaParesImpares"
 
-<div><label> Ingrese un número en cada casillero y luego presione enter: </label></div>
+
+<div> <label class="p-3 mb-2 bg-success text-white">Ingrese un número en cada casillero y luego presione enter:</label></div>
 
 <input type="number" class="form-control" name="número" @bind="numero1Usuario" />
 
@@ -18,28 +19,32 @@
 
 @if (numero1Usuario < 0)
 {
-    <label>El número debe ser positivo.</label>  
+   
+    <label class="alert-danger" role="alert">El número debe ser positivo!</label>
 }
 
 <br />
 
 @if (numero2Usuario < 0)
 {
-    <label>El número debe ser positivo.</label>  
+    
+    <label class="alert alert-danger" role="alert">El número debe ser positivo!</label>
 }
 
 
 <br />
-<button @onclick="CalcularMostrar" class="btn-danger">Calcular</button>   
+<button type="button"  class="btn btn-outline-danger" @onclick="CalcularMostrar">Calcular</button>
 
 
 @if (MostrarResultado == true)
 {
     <br />
     <br />
-    <label>La suma de los pares es: @Resultado1</label>
+    <label class="alert alert-primary" role="alert">La suma de los pares es: @Resultado1</label>
+
     <br />
-    <label>La suma de los impares es: @Resultado2</label>
+    <label class="alert alert-primary" role="alert">La suma de los impares es: @Resultado2</label>
+
 }
 
 
@@ -60,7 +65,7 @@
 
     bool MostrarResultado = true;
 
-    void CalcularMostrar()    
+    void CalcularMostrar()
     {
 
         //aca resolvemos el problema matematico
