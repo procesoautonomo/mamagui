@@ -1,0 +1,45 @@
+﻿@page "/Componente cuatro tito"
+
+<h1></h1> 
+
+
+
+@code {
+
+        /*[Parameter]*/
+        /*public string Titulo { get; set; } = "Titulo con propiedad local del componente";*/ 
+
+
+
+        private string nombre;
+    private int monto;
+
+    public string Nombre
+    {
+        set
+        {
+            nombre = value;
+        }
+        get
+        {
+            return nombre;
+        }
+    }
+
+    public int Monto
+    {
+        set
+        {
+            monto = value;
+        }
+        get
+        {
+            return monto;
+        }
+    }
+
+
+
+   }
+
+
