@@ -4,15 +4,19 @@
 
 
 
-<h1>Componente de @NombreCreador</h1>
+<h2 class="text-dark bg-info"> Componente de @NombreCreador</h2>
 
 <h3>@SaludoComponente</h3>
 
-<label>
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
+</svg>
+
+<label class="text-info bg-dark badge-info">
     Ingresar nombre:
 </label>
 
-<input type="text" name="name" @bind="NombreCreador" />
+<input class="form-control w-25" type="text" name="name" @bind="NombreCreador" />
 
 
 
@@ -24,38 +28,51 @@
 
 else
 {
-    <p>Ingresa algún nombre</p>
+<h4 class="alert alert-danger"> Ingresa algún nombre!</h4>
 }
 
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
+</svg>
 
-<label>
+<label class="text-info bg-dark">
     Ingresar edad:
 </label>
 <br />
 
-<input type="number" name="age" @bind="EdadCreador" />
+<input class="form-control w-25" type="number" name="age" @bind="EdadCreador" />
 
 <br />
 <br />
 
 
-@if (EdadCreador == 0 )
+@if (EdadCreador == 0)
 
 {
-    <h3>Debes ingresar tu edad. </h3>
+    <h4  class="alert alert-danger" >Debes ingresar tu edad! </h4>
 }
 
 else if (EdadCreador >= 18)
 
 {
-    <h3> Puedes ingresar. </h3>   
+    <h3> Puedes ingresar. </h3>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+    </svg>
+
+
+
 }
 
 else
 
 {
-    <h1> Rajá de acá chinwenwencha!!! </h1>
+    <h1  class="alert alert-danger" > Rajá de acá chinwenwencha!!! </h1>
 }
+
+
 
 
 @code {
@@ -64,6 +81,6 @@ else
 
     string SaludoComponente = "Saludos!";
 
-    int EdadCreador = 29; 
-    }
+    int EdadCreador = 29;
+}
 
