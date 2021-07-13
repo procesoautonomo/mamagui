@@ -1,7 +1,7 @@
 ﻿@page "/GuilleBucles"
 
 
-  <h3>CompBucles</h3>
+  <h2 class="text-dark bg-info">Componente Bucles</h2>
 
 
 @for (int i = 0; i < 15; i++)
@@ -34,15 +34,15 @@
 
 
 
-<label> Ingrese un número para mostrar su factorial.</label>
+<strong> Ingrese un número para mostrar su factorial.</strong>
 
-<input type="number" name="número" @bind="numeroDelUsuario" />
+<input class="form-control w-25"  type="number" name="número" @bind="numeroDelUsuario" />
 
-<button  @onclick="sumarNumerosEnBucle" >Iniciar </button>
+<button class="btn btn-success"  @onclick="sumarNumerosEnBucle" >Iniciar </button>
 
 <br />
 
-<label name="resultado"> Resultado: @resultado</label>
+<strong name="resultado"> Resultado: @resultado</strong>
 
 
 
