@@ -1,20 +1,24 @@
 ﻿@page "/TitoComp"
 
-<h1>Proceso de registro.</h1>
+@*<h1>Proceso de registro.</h1>*@
+<h3>
+    <div>Proceso de Registro.</div> 
+    <small class="text-muted">Mamagui te espera.</small>
+</h3>
 <br />
 <br />
 
-<label for="InputNombreUsuario">Ingresa tu nombre</label>
+<label for="InputNombreUsuario"><p class="text-decoration-underline">Ingresa tu nombre.</p></label>
 <input type="text" name="InputNombreUsuario" @bind="NombreDelUsuario" />
 <br />
 <br />
 
-<label for="InputApellidoUsuario">Ingresa tu apellido</label>
+<label for="InputApellidoUsuario"><p class="text-decoration-underline">Ingresa tu apellido.</p></label>
 <input type="text" name="InputApellidoUsuario" @bind="ApellidoDelUsuario" />
 <br />
 <br />
 
-<label for="InputEdadUsuario">Ingresa tu edad</label>
+<label for="InputEdadUsuario"><p class="text-decoration-underline">Ingresa tu edad.</p></label>
 <input type="number" name="InputEdadUsuario" @bind="EdadDeUsuario" />
 
 <br />
@@ -22,7 +26,7 @@
 
 @if (EdadDeUsuario >= 18)
 {
-    <h3>Usted puede ingresar al sitio:  @NombreDelUsuario  @ApellidoDelUsuario</h3>
+    <h3><p><em>Usted puede ingresar al sitio:</em></p> @NombreDelUsuario  @ApellidoDelUsuario</h3>
 }
 else
 {
